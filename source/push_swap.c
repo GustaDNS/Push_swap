@@ -6,7 +6,15 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:14:27 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/07/31 11:14:28 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/01 16:57:52 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+int	main(int argc, char **argv)
+{
+	if (argc < 2)
+		exit(1);
+	
+}
