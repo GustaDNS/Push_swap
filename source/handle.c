@@ -6,13 +6,13 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:19:48 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/01 17:07:06 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:22:00 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-static int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	int		i;
 	int		sign;
@@ -36,7 +36,7 @@ static int	ft_atol(const char *str)
 }
 
 
-int	limits_int(int argc, char **argv)
+int	limits_int(char **argv)
 {
 	int	i;
 
@@ -66,18 +66,21 @@ int	non_numeric(char **argv)
 		}
 		i++;
 	}
+	return(0);
 	
 }
-int	verify_split(int argc, char **argv)
+char	**verify_split(int argc, char **argv)
 {
 	char	**new_string;
 	int		i;
 
 	i = 1;
+	new_string = argv + 1;
 	if (argc == 2)
 	{
-		new_string = ft_split(argv[i], " ");
+		new_string = ft_split(argv[i], ' ');
 		if (!new_string)
-			return (0);
+			exit(1);
 	}
+	return (new_string);
 }

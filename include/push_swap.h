@@ -6,19 +6,41 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:11:06 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/01 16:59:22 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/06 13:54:09 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libraries/libft/ft_printf/ft_printf.h"
-# include "../libraries/libft/libft.h"
+# include "../libft/ft_printf/ft_printf.h"
+# include "../libft/libft.h"
 # include <limits.h>
 
-/*-------------------Handle-Errors-------------------*/
-int	non_numeric(char **argv);
-int	limits_int(int argc, char **argv);
+typedef struct s_stack
+{
+	int		data;
+	int		index;
+	struct s_stack *next;
+}	t_stack;
 
+
+/*-----------------Handle-Errors-----------------*/
+int			non_numeric(char **argv);
+int			limits_int(char **argv);
+char		**verify_split(int argc, char **argv);
+long		ft_atol(const char *str);
+
+/*---------------------Moves---------------------*/
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	rra(t_stack **a, int i);
+void	rrb(t_stack **b, int i);
+void	rrr(t_stack **a, t_stack **b);
+void	sa(t_stack **a, int i);
+void	sb(t_stack **b, int i);
+void	ss(t_stack **a, t_stack **b);
+
+
+void	create_stack(t_stack **a, char **argv);
 #endif
