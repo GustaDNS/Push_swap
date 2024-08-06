@@ -6,14 +6,14 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:11:06 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/06 13:54:09 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:46:23 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/ft_printf/ft_printf.h"
+# include "../ft_printf/ft_printf.h"
 # include "../libft/libft.h"
 # include <limits.h>
 

@@ -1,29 +1,36 @@
 NAME = push_swap
 
-CC = cc
+SRC =source/handle.c source/push_swap.c source/stack.c source/operations/push.c \
+		source/operations/reverse_rotate.c source/operations/swap.c
 
-CFLAGS = -Wall -Wextra -Werror -g -Iheaders/
-
-RM = rm -rf
+OBJS = $(SRC:.c=.o)
 
 LIBFT = ./libft/libft.a
 
-SRCS = 	source/handle.c source/push_swap.c source/stack.c source/operations/push.c \
-		source/operations/reverse_rotate.c source/operations/swap.c
+PRINT = ./ft_printf/libftprintf.a
 
-all: $(NAME)
+FLAGS = -Werror -Wall -Wextra
 
-$(NAME): $(SRCS) libs
-	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+COMPILER = cc
 
-libs:
-	@$(MAKE) -C ./libft
+all: LIB $(NAME)
+
+$(NAME): $(SRC)
+	$(COMPILER) $(FLAGS) $(SRC) $(LIBFT) $(PRINT) -o $(NAME) -g
+
+LIB:
+	$(MAKE) -C ./libft
+	$(MAKE) -C ./ft_printf
+
+re: fclean all
 
 clean:
-	@$(MAKE) clean -C ./libft
-	
+	$(MAKE) clean -C ./libft
+	$(MAKE) clean -C ./ft_printf
+
 fclean:
-	@$(MAKE) -C ./libft fclean
+	$(MAKE) fclean -C ./libft
+	$(MAKE) fclean -C ./ft_printf
 	rm -f push_swap
 
 download:
@@ -37,4 +44,16 @@ visualizer:
 	cmake .. && \
 	make && \
 	./bin/visualizer
-re: fclean all
+
+
+
+
+
+
+
+
+
+
+
+
+
