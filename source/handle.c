@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:19:48 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/06 14:22:00 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:33:02 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-
 int	limits_int(char **argv)
 {
 	int	i;
@@ -49,6 +48,7 @@ int	limits_int(char **argv)
 	}
 	return (0);
 }
+
 int	non_numeric(char **argv)
 {
 	int	i;
@@ -62,13 +62,13 @@ int	non_numeric(char **argv)
 		{
 			if (!ft_isdigit(argv[i][j]))
 				ft_printf("Error");
-			j++;	
+			j++;
 		}
 		i++;
 	}
-	return(0);
-	
+	return (0);
 }
+
 char	**verify_split(int argc, char **argv)
 {
 	char	**new_string;
@@ -83,4 +83,25 @@ char	**verify_split(int argc, char **argv)
 			exit(1);
 	}
 	return (new_string);
+}
+
+int	equal_int(int argc, char **argv)
+{
+	int i;
+	int j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (ft_atol(argv[i]) == ft_atol(argv[j]))
+			{
+				ft_printf("Error: Duplicate numbers found\n");
+				return (1);
+			}
+		}
+	}
+	return (0);
 }

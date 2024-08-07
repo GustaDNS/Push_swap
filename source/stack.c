@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 13:23:10 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/06 14:26:24 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/07 11:35:15 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	create_stack(t_stack **a, char **argv)
 {
 	t_stack	*temp;
-	int	i;
-	
+	int		i;
+
 	i = 1;
 	*a = (t_stack *)malloc (sizeof(t_stack));
 	if (!a)
@@ -32,6 +32,6 @@ void	create_stack(t_stack **a, char **argv)
 		temp = temp->next;
 		temp->data = ft_atol(argv[i]);
 		temp->index = -1;
-		temp->next = NULL; 
+		temp->next = NULL;
 	}
 }

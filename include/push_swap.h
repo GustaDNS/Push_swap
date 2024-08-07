@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:11:06 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/06 14:46:23 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:17:12 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 
 typedef struct s_stack
 {
-	int		data;
-	int		index;
-	struct s_stack *next;
+	int				data;
+	int				index;
+	struct s_stack	*next;
 }	t_stack;
 
-
 /*-----------------Handle-Errors-----------------*/
-int			non_numeric(char **argv);
-int			limits_int(char **argv);
-char		**verify_split(int argc, char **argv);
-long		ft_atol(const char *str);
+int		non_numeric(char **argv);
+int		limits_int(char **argv);
+int		equal_int(int argc, char **argv);
+char	**verify_split(int argc, char **argv);
+long	ft_atol(const char *str);
 
 /*---------------------Moves---------------------*/
 void	pa(t_stack **a, t_stack **b);
@@ -40,7 +40,9 @@ void	rrr(t_stack **a, t_stack **b);
 void	sa(t_stack **a, int i);
 void	sb(t_stack **b, int i);
 void	ss(t_stack **a, t_stack **b);
-
+void	ra(t_stack **a, int i);
+void	rb(t_stack **b, int i);
+void	rr(t_stack **a, t_stack **b);
 
 void	create_stack(t_stack **a, char **argv);
 #endif

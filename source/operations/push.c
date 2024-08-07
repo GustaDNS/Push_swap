@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 09:41:38 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/06 11:13:28 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/07 11:36:34 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
-	t_stack *temp_a;
-	t_stack *temp_b;
-	
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+
 	temp_b = *b;
 	temp_a = (*b)->next;
 	temp_b->next = *a;
@@ -24,10 +24,11 @@ void	pa(t_stack **a, t_stack **b)
 	*a = temp_b;
 	ft_printf("pa\n");
 }
+
 void	pb(t_stack **a, t_stack **b)
 {
-	t_stack *temp_a;
-	t_stack *temp_b;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
 	temp_a = *a;
 	temp_b = (*a)->next;
