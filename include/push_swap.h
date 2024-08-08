@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:11:06 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/07 14:17:12 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/08 15:28:28 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,16 @@ void	ra(t_stack **a, int i);
 void	rb(t_stack **b, int i);
 void	rr(t_stack **a, t_stack **b);
 
+/*---------------------Stack---------------------*/
 void	create_stack(t_stack **a, char **argv);
+
+/*---------------------Utils---------------------*/
+void	handle_negative(t_stack **a, int handle);
+int		list_len(t_stack **a);
+
+/*---------------------Sorting---------------------*/
+int		sorted(t_stack **a);
+void	radix(t_stack **a, t_stack **b);
+
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 13:23:10 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/07 11:35:15 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:09:38 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,4 @@ void	create_stack(t_stack **a, char **argv)
 		temp->next = NULL;
 	}
 }
+

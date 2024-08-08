@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRC =source/handle.c source/push_swap.c source/stack.c source/operations/push.c \
 		source/operations/reverse_rotate.c source/operations/swap.c \
-		source/operations/rotate.c \
+		source/operations/rotate.c source/radix.c source/utils.c\
 
 OBJS = $(SRC:.c=.o)
 
