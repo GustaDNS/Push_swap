@@ -51,6 +51,7 @@ static int	wordlen(char const *s, char c)
 static char	*makeword(char const *s, char c)
 {
 	char	*word;
+	char	*newstring;
 	int		i;
 
 	i = 0;
@@ -63,7 +64,9 @@ static char	*makeword(char const *s, char c)
 		i++;
 	}
 	word[i] = '\0';
-	return (word);
+	newstring = ft_strdup(word);
+	free(word);
+	return (newstring);
 }
 
 char	**free_data(char **split, int i)

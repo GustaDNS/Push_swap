@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:51:21 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/07 14:36:45 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:23:15 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rra(t_stack **a, int i)
 	temp_b->next = *a;
 	*a = temp_b;
 	if (i == 0)
-		ft_printf("ra\n");
+		ft_printf("rra\n");
 }
 
 void	rrb(t_stack **b, int i)
@@ -43,7 +43,7 @@ void	rrb(t_stack **b, int i)
 	temp_b->next = *b;
 	*b = temp_b;
 	if (i == 0)
-		ft_printf("ra\n");
+		ft_printf("rrb\n");
 }
 
 void	rrr(t_stack **a, t_stack **b)

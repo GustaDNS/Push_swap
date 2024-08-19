@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:34:49 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/08 15:54:36 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:41:09 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,21 @@ int	list_len(t_stack **a)
 		i++;
 	}
 	return (i);
+}
+int	mix_functions(int argc, char **verify, t_stack **a, t_stack **b)
+{
+	int count;
+	
+	count = 0;
+	count += limits_int(verify);
+	count += non_numeric(verify);
+	count += equal_int(argc, verify);
+	if (count != 0)
+	{
+		if (argc == 2)
+			ft_free_matrix(verify);
+		free(a);
+		free(b);
+	}
+	return (count);
 }
