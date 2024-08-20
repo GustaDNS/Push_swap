@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:19:48 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/19 15:42:16 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:13:49 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ int	non_numeric(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]))
+			if (argv[i][0] == '-' && argv[i][1] != '\0')
+				j++;
+			else if (!ft_isdigit(argv[i][j]))
 				return(ft_printf("Error"));
 			j++;
 		}
@@ -96,7 +98,7 @@ int	equal_int(int argc, char **argv)
 	int i;
 	int j;
 
-	i = 1;
+	i = 0;
 	(void)argc;
 	while (argv[i])
 	{
