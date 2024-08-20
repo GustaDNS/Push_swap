@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 13:23:10 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/19 15:06:25 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:36:07 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	create_stack(t_stack **a, char **argv)
 		ft_free(a, NULL);
 	(*a)->data = ft_atol(argv[i]);
 	(*a)->index = -1;
+	(*a)->next = NULL;
 	temp = *a;
 	while (argv[++i])
 	{

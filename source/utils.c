@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:34:49 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/20 10:35:22 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:33:19 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,15 @@ int	list_len(t_stack **a)
 }
 int	mix_functions(int argc, char **verify, t_stack **a, t_stack **b)
 {
-	int count;
-	
-	count = 0;							
+	int	count;
+
+	count = 0;
 	count += limits_int(verify);
 	count += non_numeric(verify);
-	count += equal_int(argc, verify);
+	count += equal_int(verify);
 	if (count != 0)
 	{
+		ft_printf("Error");
 		if (argc == 2)
 			ft_free_matrix(verify);
 		free(a);

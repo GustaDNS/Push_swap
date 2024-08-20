@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:11:06 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/19 15:36:53 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:30:15 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 /*-----------------Handle-Errors-----------------*/
 int		non_numeric(char **argv);
 int		limits_int(char **argv);
-int		equal_int(int argc, char **argv);
+int		equal_int(char **argv);
 char	**verify_split(int argc, char **argv);
 long	ft_atol(const char *str);
 

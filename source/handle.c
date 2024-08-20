@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:19:48 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/20 11:13:49 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:14:47 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ long	ft_atol(const char *str)
 int	limits_int(char **argv)
 {
 	int		i;
-	ssize_t nbr;
+	ssize_t	nbr;
 
 	i = 0;
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
-		if (nbr > INT_MAX || nbr <= INT_MIN)
-			return (ft_printf("Error"));
+		if (nbr > INT_MAX || nbr < INT_MIN)
+			return (1);
 		i++;
 	}
 	return (0);
@@ -62,51 +62,50 @@ int	non_numeric(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][0] == '-' && argv[i][1] != '\0')
-				j++;
-			else if (!ft_isdigit(argv[i][j]))
-				return(ft_printf("Error"));
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-' && argv[i][j] != '+')
+				return (1);
 			j++;
+			if (j > 11)
+				return (1);
 		}
 		i++;
 	}
-	if(i == 0)
-		return(1);
 	return (0);
 }
 
 char	**verify_split(int argc, char **argv)
 {
 	char	**new_string;
+	int		i;
 
+	i = 0;
 	new_string = NULL;
 	if (argc > 2)
 		new_string = argv + 1;
-	if (argc == 2 && ft_strchr(argv[1], ' '))
+	if (argc == 2)
 	{
 		new_string = ft_split(argv[1], ' ');
 		if (!new_string)
 			exit(1);
+		while (new_string[i])
+			i++;
 	}
-	if (!new_string)
-		exit(1);
 	return (new_string);
 }
 
-int	equal_int(int argc, char **argv)
+int	equal_int(char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	(void)argc;
 	while (argv[i])
 	{
 		j = i + 1;
 		while (argv[j])
 		{
 			if (ft_atol(argv[i]) == ft_atol(argv[j]))
-				return(ft_printf("Error\n"));
+				return (1);
 			j++;
 		}
 		i++;
