@@ -2,7 +2,7 @@
 	<h1>
 		<i>Push_Swap</i>
 	</h1>
-	<img src=https://github.com/GustaDNS/42-project-badges/blob/main/badges/push_swape.png/>
+	<img src=https://github.com/GustaDNS/42-project-badges/blob/main/badges/push_swapn.png/>
 	<p align=center>
     		In this repository, you can accsess the code created for the Push Swap project, mandatory and bonus part.
 	</p>
