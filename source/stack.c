@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 13:23:10 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/20 16:36:07 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:47:02 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	create_stack(t_stack **a, char **argv)
 	(*a)->index = -1;
 	(*a)->next = NULL;
 	temp = *a;
-	while (argv[++i])
+	while (argv[++i] != NULL)
 	{
 		temp->next = (t_stack *)malloc (sizeof(t_stack));
 		if (!temp->next)
@@ -66,7 +66,7 @@ void	ft_free(t_stack **a, t_stack **b)
 
 void	ft_free_matrix(char **g_matrix)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (g_matrix[i])

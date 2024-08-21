@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:19:48 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/20 17:14:47 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:09:19 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ long	ft_atol(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
+	if (!str)
+		return (1);
 	while ((str[i] <= 13 && str[i] >= 9) || (str[i] == 32))
 		i++;
 	if (str[i] == '-')
@@ -35,22 +37,6 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-int	limits_int(char **argv)
-{
-	int		i;
-	ssize_t	nbr;
-
-	i = 0;
-	while (argv[i])
-	{
-		nbr = ft_atol(argv[i]);
-		if (nbr > INT_MAX || nbr < INT_MIN)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 int	non_numeric(char **argv)
 {
 	int	i;
@@ -60,9 +46,13 @@ int	non_numeric(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][j] == '-' || argv[i][j] == '+')
+			j++;
+		if (!argv[i][j])
+			return(1);
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-' && argv[i][j] != '+')
+			if (!ft_isdigit(argv[i][j]))
 				return (1);
 			j++;
 			if (j > 11)
@@ -79,6 +69,8 @@ char	**verify_split(int argc, char **argv)
 	int		i;
 
 	i = 0;
+	if (argc == 1)
+		exit(1);
 	new_string = NULL;
 	if (argc > 2)
 		new_string = argv + 1;
@@ -87,10 +79,28 @@ char	**verify_split(int argc, char **argv)
 		new_string = ft_split(argv[1], ' ');
 		if (!new_string)
 			exit(1);
-		while (new_string[i])
-			i++;
+		if (!*new_string)
+		{
+			ft_free_matrix(new_string);
+			exit(1);
+		}
 	}
 	return (new_string);
+}
+int	limits_int(char **argv)
+{
+	int		i;
+	ssize_t	nbr;
+
+	i = 0;
+	while (argv[i])
+	{
+		nbr = ft_atol(argv[i]);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 int	equal_int(char **argv)

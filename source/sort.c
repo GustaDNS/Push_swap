@@ -6,38 +6,41 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 09:16:53 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/19 11:38:11 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:41:00 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-void sort_2(t_stack **a)
+void	sort_2(t_stack **a)
 {
 	if ((*a)->data > (*a)->next->data)
 		sa(a, 0);
 }
+
 void	sort_3(t_stack **a)
 {
-	if (sorted(a))
-		return ;
-	if ((*a)->data > (*a)->next->data && (*a)->data > (*a)->next->next->data)
+	if ((*a)->data > (*a)->next->data
+		&& (*a)->data > (*a)->next->next->data)
 	{
 		ra(a, 0);
 		if ((*a)->data > (*a)->next->data)
 			sa(a, 0);
 	}
-	else if ((*a)->data > (*a)->next->data && (*a)->data < (*a)->next->next->data)
+	else if ((*a)->data > (*a)->next->data
+		&& (*a)->data < (*a)->next->next->data)
 		sa(a, 0);
-	else if ((*a)->data < (*a)->next->data && (*a)->data > (*a)->next->next->data)
+	else if ((*a)->data < (*a)->next->data
+		&& (*a)->data > (*a)->next->next->data)
 		rra(a, 0);
-	else if ((*a)->data < (*a)->next->data && (*a)->next->data > (*a)->next->next->data)
+	else if ((*a)->data < (*a)->next->data
+		&& (*a)->next->data > (*a)->next->next->data)
 	{
 		sa(a, 0);
 		ra(a, 0);
 	}
-	else if ((*a)->data < (*a)->next->data && (*a)->data < (*a)->next->next->data)
+	else if ((*a)->data < (*a)->next->data
+		&& (*a)->data < (*a)->next->next->data)
 	{
 		ra(a, 0);
 		sa(a, 0);
@@ -62,6 +65,7 @@ void	sort_4(t_stack **a, t_stack **b, int i)
 	sort_3(a);
 	pa(a, b);
 }
+
 void	sort_5(t_stack **a, t_stack **b)
 {
 	if (sorted(a))
@@ -92,6 +96,8 @@ void	sort_5(t_stack **a, t_stack **b)
 
 void	ft_union(t_stack **a, t_stack **b)
 {
+	if (sorted(a))
+		return ;
 	if (list_len(a) == 2)
 		sort_2(a);
 	else if (list_len(a) == 3)

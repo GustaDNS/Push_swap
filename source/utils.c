@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:34:49 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/20 16:33:19 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:07:03 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	sorted(t_stack **a)
 {
-	t_stack *temp_a;
+	t_stack	*temp_a;
 
 	temp_a = *a;
 	while (temp_a->next)
@@ -27,11 +27,11 @@ int	sorted(t_stack **a)
 	return (1);
 }
 
-void handle_negative(t_stack **a, int handle)
+void	handle_negative(t_stack **a, int handle)
 {
-	t_stack *temp_a;
-	t_stack *temp_b;
-	int i;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+	int		i;
 
 	temp_a = *a;
 	while (temp_a)
@@ -59,7 +59,7 @@ int	list_len(t_stack **a)
 {
 	t_stack	*temp_a;
 	int		i;
-	
+
 	temp_a = *a;
 	i = 0;
 	while (temp_a)
@@ -69,13 +69,14 @@ int	list_len(t_stack **a)
 	}
 	return (i);
 }
+
 int	mix_functions(int argc, char **verify, t_stack **a, t_stack **b)
 {
 	int	count;
 
 	count = 0;
-	count += limits_int(verify);
 	count += non_numeric(verify);
+	count += limits_int(verify);
 	count += equal_int(verify);
 	if (count != 0)
 	{

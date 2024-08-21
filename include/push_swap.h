@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:11:06 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/20 16:30:15 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:06:44 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct s_stack
 
 /*-----------------Handle-Errors-----------------*/
 int		non_numeric(char **argv);
-int		limits_int(char **argv);
 int		equal_int(char **argv);
+int		limits_int(char **argv);
 char	**verify_split(int argc, char **argv);
 long	ft_atol(const char *str);
 
@@ -64,6 +64,5 @@ void	sort_3(t_stack **a);
 void	sort_4(t_stack **a, t_stack **b, int i);
 void	sort_5(t_stack **a, t_stack **b);
 void	ft_union(t_stack **a, t_stack **b);
-
 
 #endif
