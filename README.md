@@ -85,4 +85,5 @@ After cloning the project to your local repository, you can use the following co
     <li><b>make clean:</b> deletes the object files created during compilation</li>
     <li><b>make fclean:</b> executes the <b>clean</b> command and also deletes the binary files</li>
     <li> <b>make re:</b> runs the <b>fclean</b> command followed by <b>make all</b> to recompile the project</li>
+    <li> <b>make visualizer:</b> runs the <b>visualizer</b> to use a interface and see how the algorithm work</li>
 </ul>
