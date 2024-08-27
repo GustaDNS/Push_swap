@@ -6,6 +6,7 @@
 	<p align=center>
     		In this repository, you can accsess the code created for the Push Swap project, mandatory and bonus part.
 	</p>
+	<img src="https://github.com/GustaDNS/Push_swap/blob/main/Push_swap.gif" alt=Push_swap_gif/>
 </div>
 
 ---
