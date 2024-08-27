@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:19:48 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/21 13:09:19 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:26:53 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	non_numeric(char **argv)
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
 		if (!argv[i][j])
-			return(1);
+			return (1);
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
@@ -87,6 +87,7 @@ char	**verify_split(int argc, char **argv)
 	}
 	return (new_string);
 }
+
 int	limits_int(char **argv)
 {
 	int		i;

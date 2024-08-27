@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:34:49 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/21 13:07:03 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:03:33 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	mix_functions(int argc, char **verify, t_stack **a, t_stack **b)
 	count += equal_int(verify);
 	if (count != 0)
 	{
-		ft_printf("Error");
+		ft_printf("Error\n");
 		if (argc == 2)
 			ft_free_matrix(verify);
 		free(a);

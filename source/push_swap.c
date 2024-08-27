@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:14:27 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/08/21 13:00:32 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:14:20 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int argc, char **argv)
 	t_stack	**stack_b;
 	char	**verify;
 
-	
 	verify = verify_split(argc, argv);
 	stack_a = (t_stack **)malloc(sizeof(t_stack));
 	stack_b = (t_stack **)malloc(sizeof(t_stack));
